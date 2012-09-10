@@ -12,6 +12,8 @@ const int screenHeight = 600;
 const int screenBPP = 32;
 
 sf::RenderWindow display;
+sf::Clock c;
+float timeElapsed = 0;
 
 int main(int argc, char** argv) {
 
@@ -53,6 +55,12 @@ int main(int argc, char** argv) {
 		display.display();
 
 	}
+
+	sf::Time t = c.getElapsedTime();
+
+	timeElapsed = t.asSeconds();
+
+	cout << timeElapsed << endl;
 
 	return 0;
 }

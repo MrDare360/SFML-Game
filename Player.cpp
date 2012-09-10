@@ -24,6 +24,7 @@ void Player::update() {
 	Player::down = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
 	Player::right = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
 	Player::left = sf::Keyboard::isKeyPressed(sf::Keyboard::A);
+	Player::sprint = sf::Keyboard::isKeyPressed(sf::Keyboard::LShift);
 
 	if(up==true && down==false) {
 		Player::setPlayerY(Player::getPlayerY() + Player::speed);
@@ -36,6 +37,11 @@ void Player::update() {
 	}
 	if(left==false && right==true) {
 		Player::setPlayerX(Player::getPlayerX() + Player::speed);
+	}
+	if(sprint==true) {
+		Player::speed = 10.0f;
+	} else {
+		Player::speed = 6.0f;
 	}
 
 }

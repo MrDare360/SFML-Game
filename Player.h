@@ -12,6 +12,7 @@ class Player {
 		float playerHeight;
 		float speed;
 		bool up, down, right, left;
+		bool sprint;
 	
 	public:
 		Player();

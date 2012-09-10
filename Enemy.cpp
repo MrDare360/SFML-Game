@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "Player.h"
 #include <SFML/Graphics.hpp>
+#include <stdio.h>
 
 Enemy::Enemy() {
 	Enemy::enemyWidth = 100.0f;
@@ -18,7 +19,11 @@ void Enemy::setup() {
 
 void Enemy::update() {
 
-	
+	if(Enemy::getEnemyX() >= Player::getPlayerX() && Enemy::getEnemyWidth() <= Player::getPlayerWidth()) {
+		if(Enemy::getEnemyY() >= Player::getPlayerY() && Enemy::getEnemyHeight() <= Player::getPlayerHeight()) {
+			printf("Collision detected at %f , %f with width of %f and height of %f", Enemy::getEnemyX(), Enemy::getEnemyY(), Enemy::getEnemyWidth(), Enemy::getEnemyHeight());
+		}
+	}
 
 }
 
