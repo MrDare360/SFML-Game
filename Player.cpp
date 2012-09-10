@@ -5,6 +5,7 @@ Player::Player() {
 
 	Player::playerWidth = 100.0f;
 	Player::playerHeight = 100.0f;
+	Player::speed = 6.0f;
 
 	Player::setup();
 
@@ -22,10 +23,19 @@ void Player::update() {
 	Player::up = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
 	Player::down = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
 	Player::right = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
-	Player::left = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
+	Player::left = sf::Keyboard::isKeyPressed(sf::Keyboard::A);
 
 	if(up==true && down==false) {
-		Player::setPlayerY(Player::getPlayerY() + 1.0f);
+		Player::setPlayerY(Player::getPlayerY() + Player::speed);
+	}
+	if(up==false && down==true) {
+		Player::setPlayerY(Player::getPlayerY() - Player::speed);
+	}
+	if(left==true && right==false) {
+		Player::setPlayerX(Player::getPlayerX() - Player::speed);
+	}
+	if(left==false && right==true) {
+		Player::setPlayerX(Player::getPlayerX() + Player::speed);
 	}
 
 }
@@ -44,4 +54,3 @@ void Player::draw() {
 	glEnd();
 
 }
-

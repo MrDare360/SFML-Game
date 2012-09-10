@@ -10,6 +10,7 @@ class Player {
 		float playerY;
 		float playerWidth;
 		float playerHeight;
+		float speed;
 		bool up, down, right, left;
 	
 	public:

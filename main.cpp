@@ -1,6 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
+#include <SFML/System.hpp>
+#include <iostream>
 #include "Player.h"
+#include "Enemy.h"
+
+using namespace std;
 
 const int screenWidth = 800;
 const int screenHeight = 600;
@@ -11,6 +16,8 @@ sf::RenderWindow display;
 int main(int argc, char** argv) {
 
 	display.create(sf::VideoMode(screenWidth, screenHeight, screenBPP), "SFML Window", !sf::Style::Resize | sf::Style::Close);
+	display.setFramerateLimit(60);
+
 
 	glEnable(GL_TEXTURE_2D);
 
@@ -20,8 +27,7 @@ int main(int argc, char** argv) {
 	glMatrixMode(GL_MODELVIEW);
 
 	Player player;
-
-
+	Enemy enemy;
 
 	while(display.isOpen()) {
 
@@ -38,6 +44,9 @@ int main(int argc, char** argv) {
 
 		//Draw
 		
+		enemy.update();
+		enemy.draw();
+
 		player.update();
 		player.draw();
 
@@ -46,4 +55,12 @@ int main(int argc, char** argv) {
 	}
 
 	return 0;
+}
+
+void destroyEnemy(Enemy *e) {
+	delete &e;
+}
+
+void destroyPlayer(Player *p) {
+	delete &p;
 }
