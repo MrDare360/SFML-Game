@@ -3,11 +3,11 @@
 
 Player::Player() {
 
-	Player::playerWidth = 100.0f;
-	Player::playerHeight = 100.0f;
-	Player::speed = 6.0f;
+	playerWidth = 100.0f;
+	playerHeight = 100.0f;
+	speed = 6.0f;
 
-	Player::setup();
+	setup();
 
 }
 

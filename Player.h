@@ -6,20 +6,20 @@
 class Player {
 
 	private:
-		float playerX;
-		float playerY;
-		float playerWidth;
-		float playerHeight;
-		float speed;
+		static float playerX;
+		static float playerY;
+		static float playerWidth;
+		static float playerHeight;
+		static float speed;
 		bool up, down, right, left;
 		bool sprint;
 	
 	public:
 		Player();
-		float getPlayerX() {return playerX;}
-		float getPlayerY() {return playerY;}
-		float getPlayerWidth() {return playerWidth;}
-		float getPlayerHeight() {return playerHeight;}
+		static float getPlayerX() {return playerX;}
+		static float getPlayerY() {return playerY;}
+		static float getPlayerWidth() {return playerWidth;}
+		static float getPlayerHeight() {return playerHeight;}
 		void setPlayerX(int xx) {playerX = xx;}
 		void setPlayerY(int yy) {playerY = yy;}
 		void draw();

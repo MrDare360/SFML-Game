@@ -4,23 +4,23 @@
 class Enemy {
 
 	private:
-		static float enemyX;
-		static float enemyY;
-		static float enemyWidth;
-		static float enemyHeight;
-		static float enemySpeed;
+		float enemyX;
+		float enemyY;
+		float enemyWidth;
+		float enemyHeight;
+		float enemySpeed;
 
 	public:
 		Enemy();
-		static float getEnemyX() {return enemyX;}
-		static float getEnemyY() {return enemyY;}
-		static float getEnemyWidth() {return enemyWidth;}
-		static float getEnemyHeight() {return enemyHeight;}
-		static void setEnemyX(int xx) {enemyX = xx;}
-		static void setEnemyY(int yy) {enemyY = yy;}
-		static void update();
-		static void draw();
-		static void setup();
+		float getEnemyX() {return enemyX;}
+		float getEnemyY() {return enemyY;}
+		float getEnemyWidth() {return enemyWidth;}
+		float getEnemyHeight() {return enemyHeight;}
+		void setEnemyX(int xx) {enemyX = xx;}
+		void setEnemyY(int yy) {enemyY = yy;}
+		void update();
+		void draw();
+		void setup();
 };
 
 #endif
