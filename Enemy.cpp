@@ -19,8 +19,8 @@ void Enemy::setup() {
 
 void Enemy::update() {
 
-	if(Enemy::getEnemyX() >= Player::getPlayerX() && Enemy::getEnemyWidth() <= Player::getPlayerWidth()) {
-		if(Enemy::getEnemyY() >= Player::getPlayerY() && Enemy::getEnemyHeight() <= Player::getPlayerHeight()) {
+	if(Player::getPlayerX() >= Enemy::getEnemyX() && Player::getPlayerWidth() <= Enemy::getEnemyWidth()) {
+		if(Player::getPlayerY() >= Enemy::getEnemyY() && Player::getPlayerHeight() <= Enemy::getEnemyHeight()) {
 			printf("Collision detected at %f , %f with width of %f and height of %f", Enemy::getEnemyX(), Enemy::getEnemyY(), Enemy::getEnemyWidth(), Enemy::getEnemyHeight());
 		}
 	}

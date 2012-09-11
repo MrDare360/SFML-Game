@@ -1,6 +1,12 @@
 #include "Player.h"
 #include <SFML/Graphics.hpp>
 
+float Player::playerX;
+float Player::playerY;
+float Player::playerWidth;
+float Player::playerHeight;
+float Player::speed;
+
 Player::Player() {
 
 	playerWidth = 100.0f;
